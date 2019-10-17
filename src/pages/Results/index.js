@@ -8,6 +8,7 @@ import queryString from 'query-string';
 import { searchMovie } from "../../redux/actions/search";
 import { movieResults, isSearchLoading } from "../../redux/selectors";
 import MovieResult from '../../components/MovieResult';
+import MovieWithoutResult from '../../components/MovieResult/withOutResult';
 
 
 export default ({location}) => {
@@ -23,9 +24,10 @@ export default ({location}) => {
 
     // componente html para cargar las imagenes
     const renderMovies = () => {
-        if(movies){ return movies.map( (value, index) => <MovieResult key={index} {...value} /> ); }
+        console.log( movies );
+        if( movies ){ return movies.map( (value, index) => <MovieResult key={index} {...value} /> ); }
         else if(isLoading) { return <CircularProgress size={70} color="primary" /> }
-        else { return <div></div> }
+        else { return <MovieWithoutResult /> }
     };
 
     return (

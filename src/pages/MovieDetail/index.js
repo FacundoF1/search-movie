@@ -5,7 +5,7 @@ import style from "./style";
 
 import { movieResult as movieResultSelector, isSearchLoading } from '../../redux/selectors';
 import { searchMovieById } from "../../redux/actions/search";
-
+import Mapa from "../../components/Map";
 export default ({ match }) => {
 
     const classes = style();
@@ -13,7 +13,7 @@ export default ({ match }) => {
     const movieResult = useSelector( state => movieResultSelector(state) );
     const movieId = match.params.id;
     const isLoading = useSelector( state => isSearchLoading(state) );
-
+    
     useEffect( () => {
         if( (!movieResult && movieId) || (movieResult.imdbID !== movieId) ){
             dispatch( searchMovieById({ movieId }) ); 
@@ -42,6 +42,7 @@ export default ({ match }) => {
                 <Typography> <strong> Premios: </strong> {movieResult.Awards} </Typography>
                 <Typography> <strong> Sinopsis: </strong> {movieResult.Plot} </Typography>
             </Grid>
+            <Mapa />
         </Card> 
     );
 }

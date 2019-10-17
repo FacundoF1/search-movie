@@ -9,7 +9,7 @@ import MovieDetail from './pages/MovieDetail';
 
 const App = ({ store }) => (
 	<Provider store={store}>
-		<Router>
+		<Router basename={process.env.PUBLIC_URL}>
 			<div>
 				<Route exact path="/" component={Home} />
 				<Route path="/results" component={Results} />

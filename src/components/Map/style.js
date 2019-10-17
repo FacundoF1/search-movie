@@ -8,8 +8,13 @@ const contenedStyleObj = {
 
 export default makeStyles({
     container: {
-        // height: '95vh',
+        height: '500px',
+        width: '500px',
         flexDirection: 'column',
         ...contenedStyleObj
+    },
+    map: {
+        height: '100vh',
+        width: '100vh',
     }
 })

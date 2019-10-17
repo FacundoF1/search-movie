@@ -23,6 +23,7 @@ const MovieResult = ({ Poster, Title, Type, Year, imdbID, history }) => {
                 <Typography> {Year} </Typography>
                 <Button color="primary" variant="contained" onClick={handleSeeMovie} > Ver mas </Button>
             </Grid>
+           
         </Card> 
     );
 

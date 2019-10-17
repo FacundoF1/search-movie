@@ -22,9 +22,6 @@ export default ({history}) => {
                             Bienvenido <FontAwesomeIcon icon={faCoffee} />
                         </Typography>
                     </Grid>
-                    <Grid>
-                        <Icon className="fa fa-video" color="action" />
-                    </Grid>
                 </Grid>
                 <TextField
                     type="search"
